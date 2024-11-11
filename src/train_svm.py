@@ -12,8 +12,8 @@ from tqdm import tqdm
 # %%
 #Load the proces data:
 
-train_data = pd.read_csv('/home/spocklight/Git/Git/Digit-Recognizer/data/processed_train_data.csv')
-train_labels = pd.read_csv('/home/spocklight/Git/Git/Digit-Recognizer/data/processed_train_labels.csv').values.ravel()
+train_data = pd.read_csv('tmp/processed_train_data.csv')
+train_labels = pd.read_csv('tmp/processed_train_labels.csv').values.ravel()
 
 # %%
 #Loading the model and applying grid_search and cross validation

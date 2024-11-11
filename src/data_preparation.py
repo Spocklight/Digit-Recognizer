@@ -138,25 +138,9 @@ test_data = pca.transform(test_data)
 # %%
 #Save processed data:
 
-train_data.to_csv('/home/spocklight/Git/Git/Digit-Recognizer/data/processed_train_data.csv', index=False)
-train_labels.to_csv('/home/spocklight/Git/Git/Digit-Recognizer/data/processed_train_labels.csv', index=False)
-test_data.to_csv('/home/spocklight/Git/Git/Digit-Recognizer/data/processed_test_data.csv', index=False)
-
-# %%
-#Zipping the info to make the push to github
-
-files = [
-    '/home/spocklight/Git/Git/Digit-Recognizer/data/processed_train_data.csv',
-    '/home/spocklight/Git/Git/Digit-Recognizer/data/processed_train_labels.csv',
-    '/home/spocklight/Git/Git/Digit-Recognizer/data/processed_test_data.csv'
-]
-
-with zipfile.ZipFile('/home/spocklight/Git/Git/Digit-Recognizer/data/processed_data.zip', 'w') as zipf:
-    for file in files:
-        zipf.write(file, arcname=file.split('/')[-1])
-
-for file in files:
-    os.remove(file)
+train_data.to_csv('/tmp/processed_train_data.csv', index=False)
+train_labels.to_csv('/tmp/processed_train_labels.csv', index=False)
+test_data.to_csv('/tmp/processed_test_data.csv', index=False)
 
 # %%
 #Techniques like data augmentation (creating slightly modified versions of the original images) can also improve generalization and performance.
