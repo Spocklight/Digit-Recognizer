@@ -138,9 +138,16 @@ test_data = pca.transform(test_data)
 # %%
 #Save processed data:
 
-train_data.to_csv('/tmp/processed_train_data.csv', index=False)
-train_labels.to_csv('/tmp/processed_train_labels.csv', index=False)
-test_data.to_csv('/tmp/processed_test_data.csv', index=False)
+#Creamos previamente una carpeta temporal que se borre cada semana usando un cronjob:
+
+#mkdir /home/spocklight/tmp_new
+#crontab -e (y seleccionamos 1, para usar el editor nano)
+#0 0 * * 0 rm -rf /home/spocklight/tmp_new (añadimos esta línea + ctrlX + Y)
+
+train_data.to_csv('/home/spocklight/tmp_new/processed_train_data.csv', index=False)
+train_labels.to_csv('/home/spocklight/tmp_new/processed_train_labels.csv', index=False)
+test_data.to_csv('/home/spocklight/tmp_new/processed_test_data.csv', index=False)
 
 # %%
 #Techniques like data augmentation (creating slightly modified versions of the original images) can also improve generalization and performance.
+# %%
