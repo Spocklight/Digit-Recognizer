@@ -6,7 +6,6 @@ import os
 import numpy as np
 import random
 import seaborn as sns
-import zipfile
 
 from matplotlib import pyplot as plt
 
@@ -150,4 +149,5 @@ test_data.to_csv('/home/spocklight/tmp_new/processed_test_data.csv', index=False
 
 # %%
 #Techniques like data augmentation (creating slightly modified versions of the original images) can also improve generalization and performance.
+#We apply them in the CNN algorithm.
 # %%
